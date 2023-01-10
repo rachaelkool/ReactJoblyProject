@@ -1,6 +1,8 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Placeholder from "../Placeholder";
+import CompanyList from "../companies/CompanyList";
+import CompanyDetail from "../companies/CompanyDetail";
 
 
 function Routes() {
@@ -22,7 +24,7 @@ function Routes() {
             </Route>
 
             <Route exact path="/companies">
-                <Placeholder />
+                <CompanyList />
             </Route>
 
             <Route exact path="/jobs">
@@ -30,7 +32,7 @@ function Routes() {
             </Route>
 
             <Route exact path="/companies/:handle">
-                <Placeholder />
+                <CompanyDetail />
             </Route>
 
             <Route path="/profile">
