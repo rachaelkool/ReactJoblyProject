@@ -14,7 +14,7 @@ export const TOKEN_STORAGE_ID = "jobly-token";
 function App() {
 
     const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
-    const [currentUser, setCurrentUser] = useState({});
+    const [currentUser, setCurrentUser] = useState(null);
 
     async function login(loginData) {
         try {
@@ -48,7 +48,6 @@ function App() {
                     setCurrentUser(currentUser);
                 } catch (e) {
                     console.error("App loadUserInfo: problem loading", e);
-                    console.log('catch')
                     setCurrentUser({});
                 }
             }
