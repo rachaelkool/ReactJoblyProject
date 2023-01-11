@@ -6,6 +6,7 @@ import CompanyDetail from "../companies/CompanyDetail";
 import JobList from "../jobs/JobList";
 import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
+import Homepage from "../Homepage";
 
 
 function Routes({ login, signup }) {
@@ -15,7 +16,7 @@ function Routes({ login, signup }) {
             <Switch>
 
             <Route exact path="/">
-                <Placeholder />
+                <Homepage />
             </Route>
 
             <Route exact path="/login">
