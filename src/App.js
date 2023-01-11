@@ -6,11 +6,14 @@ import NavBar from './routes-navigation/NavBar';
 import JoblyApi from './api/api';
 import UserContext from './UserContext'
 import jwt from "jsonwebtoken";
+import useLocalStorage from './hooks/useLocalStorage';
 
+
+export const TOKEN_STORAGE_ID = "jobly-token";
 
 function App() {
 
-    const [token, setToken] = useState('')
+    const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
     const [currentUser, setCurrentUser] = useState({});
 
     async function login(loginData) {
@@ -55,7 +58,7 @@ function App() {
 
     function logout() {
       setCurrentUser(null);
-      setToken('');
+      setToken(null);
     }
 
     return (
