@@ -17,8 +17,6 @@ function CompanyList() {
         setCompanies(companies);
     }
 
-    console.log(companies[0])
-
     return (
         <div>
             <SearchForm searching={search} />
