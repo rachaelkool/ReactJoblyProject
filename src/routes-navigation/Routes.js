@@ -4,9 +4,11 @@ import Placeholder from "../Placeholder";
 import CompanyList from "../companies/CompanyList";
 import CompanyDetail from "../companies/CompanyDetail";
 import JobList from "../jobs/JobList";
+import LoginForm from "../LoginForm";
+import SignupForm from "../SignupForm";
 
 
-function Routes() {
+function Routes({ login, signup }) {
 
     return (
         <div>
@@ -17,11 +19,11 @@ function Routes() {
             </Route>
 
             <Route exact path="/login">
-                <Placeholder />
+                <LoginForm login={login} />
             </Route>
 
             <Route exact path="/signup">
-                <Placeholder />
+                <SignupForm signup={signup} />
             </Route>
 
             <Route exact path="/companies">

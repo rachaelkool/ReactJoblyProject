@@ -5,14 +5,14 @@ function SearchForm({ searching }) {
 
     const [searchTerm, setSearchTerm] = useState("");
 
-    function handleSubmit(evt) {
-        evt.preventDefault();
+    function handleSubmit(e) {
+        e.preventDefault();
         searching(searchTerm.trim() || undefined);
         setSearchTerm(searchTerm.trim());
     }
 
-    function handleChange(evt) {
-        setSearchTerm(evt.target.value);
+    function handleChange(e) {
+        setSearchTerm(e.target.value);
     }
 
     return (
