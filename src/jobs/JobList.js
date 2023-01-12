@@ -20,6 +20,7 @@ function JobList() {
     return (
         <div>
             <SearchForm searchFor={search} />
+            
             {jobs.map(j => (
             <JobCard
                 key={j.id}
@@ -29,7 +30,7 @@ function JobList() {
                 equity={j.equity}
                 companyName={j.companyName}
             />
-        ))}
+            ))}
         </div>
     );
 }

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
+import UserContext from "../UserContext";
 
 
-function JobCard({ title, salary, equity, companyName }) {
+function JobCard({ title, salary, equity, companyName, id}) {
     function addCommas(num) {
         if (typeof num !== 'number') {
             return 'invalid input';
@@ -24,13 +25,30 @@ function JobCard({ title, salary, equity, companyName }) {
         return addNegativeSign ? '-' + arr.join('') : arr.join('');
     }
 
+    const { hasAppliedToJob, applyToJob } = useContext(UserContext);
+    const [applied, setApplied] = useState(false);
+
+    useEffect(function updateAppliedStatus() {
+        setApplied(hasAppliedToJob(id));
+    }, [id, hasAppliedToJob]);
+
+    async function handleApply() {
+        if (hasAppliedToJob(id)) return;
+        applyToJob(id);
+        setApplied(true);
+    }
+
     return (
         <div>
-            <h4>{title}: {companyName}</h4>
+            <p><b>{title}</b></p>
+            {companyName && <p>Company: {companyName}</p>}
             {salary && <p>Salary: {addCommas(salary)}</p>}
             {equity !== undefined && <p>Equity: {equity}</p>}
-        </div>
 
+            <button onClick={handleApply} disabled={applied}>
+            {applied ? "Applied" : "Click to Apply"}
+            </button>
+        </div>
     );
 }
 
