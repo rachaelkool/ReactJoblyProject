@@ -40,6 +40,8 @@ function SignupForm({ signup }) {
                     name="username"
                     value={formData.username}
                     onChange={handleChange}
+                    autoComplete="username"
+                    required
                 />
                 </div>
                 <div>
@@ -49,6 +51,8 @@ function SignupForm({ signup }) {
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
+                    autoComplete="password"
+                    required
                 />
                 </div>
                 <div>

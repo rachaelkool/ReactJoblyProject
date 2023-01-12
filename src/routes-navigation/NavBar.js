@@ -20,6 +20,11 @@ function NavBar({logout}) {
                     </NavLink>
                 </div>
                 <div>
+                    <NavLink to="/profile">
+                    Profile
+                    </NavLink>
+                </div>
+                <div>
                     <Link to="/" onClick={logout}>
                     Log Out {currentUser.username}
                     </Link>

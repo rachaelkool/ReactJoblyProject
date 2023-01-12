@@ -8,6 +8,7 @@ import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
 import Homepage from "../Homepage";
 import ProtectedRoute from "../ProtectedRoute";
+import EditProfileForm from "../EditProfileForm";
 
 
 function Routes({ login, signup }) {
@@ -40,7 +41,7 @@ function Routes({ login, signup }) {
             </ProtectedRoute>
 
             <ProtectedRoute path="/profile">
-                <Placeholder />
+                <EditProfileForm/>
             </ProtectedRoute>
 
             <Redirect to="/" />
